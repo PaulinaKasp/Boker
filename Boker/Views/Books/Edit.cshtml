@@ -1,0 +1,63 @@
+﻿@model Boker.Models.Book
+
+@{
+    ViewData["Title"] = "Edytuj";
+}
+
+<h1>Edytuj książkę</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Image" class="control-label">Zmień obrazek(link)</label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Tytuł</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Opis książki</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label">Autor</label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPages" class="control-label">Ilość stron</label>
+                <input asp-for="TotalPages" class="form-control" />
+                <span asp-validation-for="TotalPages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookTypeId" class="control-label">Zmień gatunek</label>
+                <select asp-for="BookTypeId" class="form-control" asp-items="ViewBag.BookTypeId"></select>
+                <span asp-validation-for="BookTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="userId" class="control-label">Użytkownik</label>
+                <select asp-for="userId" class="form-control" asp-items="ViewBag.userId"></select>
+                <span asp-validation-for="userId" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-action="Index">Wróć</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Boker.Models.Book>
+
+@{
+    ViewData["Title"] = "Książki";
+}
+
+<h1 class="text-center">Książki</h1>
+
+<div class="centered-text">
+    <p>
+        <a class="custom-button2" asp-action="Create">Dodaj nową</a>
+    </p>
+    <form id="search-form" class="custom-form" asp-controller="Books" asp-action="Index" method="get">
+        <div class="input-group">
+            <input type="text" class="custom-input mx-auto" id="SearchString" name="SearchString" placeholder="Wyszukaj tytuł">
+            <button type="submit" class="custom-button">Szukaj</button>
+        </div>
+    </form>
+</div>
+<table class="table mx-auto">
+    <thead>
+        <tr>
+            <th>
+            </th>
+            <th>
+                Tytuł
+            </th>
+            <th>
+                Opis
+            </th>
+            <th>
+                Autor
+            </th>
+            <th>
+                Strony
+            </th>
+            <th>
+                Gatunek
+            </th>
+            <!--<th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>-->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Image))
+                    {
+                        <img src="@item.Image" alt="Book Image" width="85" height="120">
+                    }
+                    else
+                    {
+                        <span>No Image Available</span>
+                    }
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookType.Name)
+            </td>
+            <!--<td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+                </td>-->
+                <td>
+                    <div class="button-container">
+                        <a class="custom-button3 pastel-blue" asp-action="Edit" asp-route-id="@item.Id">Edytuj</a>
+                    </div>
+                    <div class="button-container">
+                        <a class="custom-button3 pastel-green" asp-action="Details" asp-route-id="@item.Id">Szczegóły</a>
+                    </div>
+                    <div class="button-container">
+                        <a class="custom-button3 pastel-pink" asp-action="Delete" asp-route-id="@item.Id">Usuń</a>
+                    </div>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

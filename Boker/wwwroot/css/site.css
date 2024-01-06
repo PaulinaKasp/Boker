@@ -1,0 +1,282 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url('b1.jpg'); /* Zmieñ 'œcie¿ka/do/twojego/obrazu.jpg' na w³aœciw¹ œcie¿kê do swojego obrazu */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding-bottom: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.navbar-toggler {
+    border-color: #343a40;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1em;
+}
+
+/* Stylizacja sekcji g³ównej */
+main {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stylizacja stopki */
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.main-description {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.btn-custom {
+    transition: background-color 1s ease;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+    .btn-custom:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Delikatne szare podœwietlenie */
+    }
+
+.navbar-brand:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Kolor podœwietlenia */
+    transition: background-color 0.3s ease; /* Efekt przejœcia */
+}
+
+.logout-button {
+    border: 0;
+    background-color: white;
+    transition: background-color 1s ease;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+    .logout-button:hover {
+        background-color: rgba(255, 0, 0, 0.7); /* Delikatne szare podœwietlenie */
+        border-color: rgba(255, 0, 0, 0.7);
+        color: white;
+    }
+
+.border-login {
+    transition: background-color 1s ease; /* Ustawienie efektu przejœcia */
+    margin-right: 25px;
+    padding: 5px 10px; /* Dostosuj padding, jeœli to konieczne */
+    border-radius: 15px; /* Zaokr¹glenie rogów */
+}
+
+    .border-login:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Delikatne szare podœwietlenie */
+    }
+
+.kolor-bg {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.kolor-txt{
+    color:black;
+}
+.hr-style {
+    border: 1px solid;
+    border-width: 2px 0;
+}
+
+.margines-top{
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+/* Stylowanie przycisków */
+.custom-button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Border-radius dla przycisków */
+    font-size: 1em;
+    transition: background-color 0.5s ease; /* Animacja zmiany t³a */
+    cursor: pointer; /* Zmiana kursora na pointer */
+    margin-left: 0; /* Ustawienie marginesu na 0 */
+}
+
+.custom-button:hover {
+    background-color: #495057; /* Kolor t³a po najechaniu */
+    color: white;
+}
+
+/* Stylowanie okna wyszukiwania */
+.custom-input {
+    border: 1px solid transparent; /* Usuniêcie bordera */
+    border-radius: 10px; /* Border-radius dla inputu */
+    padding: 8px; /* Padding dla inputu */
+    background-color: rgba(255, 255, 255, 0.5); /* T³o wyszukiwania przezroczyste */
+    width: calc(100% - 110px); /* Szerokoœæ na ca³¹ dostêpn¹ szerokoœæ minus szerokoœæ przycisku */
+    margin-right: 5px; /* Margines z prawej strony */
+    outline: none; /* Usuniêcie obramowania po klikniêciu */
+}
+
+    .custom-input:focus {
+        box-shadow: none; /* Usuniêcie cienia po klikniêciu */
+    }
+
+.centered-text {
+    text-align: center; /* Wyœrodkowanie tekstu */
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+/* Stylowanie przycisków */
+.custom-button2 {
+    background-color: #f2f2f2; /* Kolor t³a na delikatny szary */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Border-radius dla przycisków */
+    font-size: 1em;
+    transition: background-color 0.5s ease; /* Animacja zmiany t³a */
+    cursor: pointer; /* Zmiana kursora na pointer */
+    margin-left: 0; /* Ustawienie marginesu na 0 */
+    text-decoration: none; /* Usuniêcie domyœlnego podkreœlenia dla linków */
+    display: inline-block; /* Ustawienie na element blokowy */
+    color: black;
+}
+
+    .custom-button2:hover {
+        background-color: #495057; /* Zmiana koloru t³a po najechaniu */
+        color: white; /* Zmiana koloru tekstu na bia³y */
+    }
+
+/* Stylowanie przycisków */
+.custom-button3 {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    flex-grow: 1; /* Wype³nienie dostêpnego miejsca */
+    margin-right: 5px; /* Margines z prawej strony */
+}
+
+/* Kolory dla ró¿nych przycisków */
+.pastel-blue {
+    background-color: #aed9e0; /* Kolor pastelowy - niebieski */
+    color: #1f2f3f; /* Kolor tekstu dla kontrastu */
+}
+
+.pastel-green {
+    background-color: #c9e4c5; /* Kolor pastelowy - zielony */
+    color: #36523c; /* Kolor tekstu dla kontrastu */
+}
+
+.pastel-pink {
+    background-color: #f6ced8; /* Kolor pastelowy - ró¿owy */
+    color: #5c2b3d; /* Kolor tekstu dla kontrastu */
+}
+
+/* Hover dla przycisków */
+.custom-button3:hover {
+    opacity: 0.9; /* Zmniejszenie nieznaczne przezroczystoœci po najechaniu */
+}
+
+/* Stylowanie kontenera */
+.button-container {
+    display: flex; /* Ustawienie elementów w linii */
+    justify-content: space-between; /* Równomierne rozmieszczenie elementów */
+    width: 100px; /* Szerokoœæ kontenera */
+    margin: auto; /* Wyœrodkowanie kontenera */
+}
+
+/* Usuniêcie marginesów i paddingu z formularza */
+.form-group {
+    margin-bottom: 0; /* Usuniêcie marginesu na dole */
+}
+
+/* Stylizacja przycisku "Dodaj" */
+input[type="submit"] {
+    width: 50%;
+    margin-bottom: 15px; /* Dodanie odstêpu na dole przycisku "Dodaj" */
+    display: block; /* Ustawienie jako blokowy */
+    margin-left: auto; /* Wyœrodkowanie poziome */
+    margin-right: auto; /* Wyœrodkowanie poziome */
+}
+
+
+/* Wyœrodkowanie formularza */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Zmiana align-items na flex-start */
+}
+
+.col-md-4 {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    background-color: none; /* #f9f9f9 z alfa kana³em 0.5 */
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center; /* Wyœrodkowanie tekstu w nag³ówku h1 */
+    margin-bottom: 20px; /* Dodanie odstêpu na dole nag³ówka h1 */
+}
+
+.custom-button4 {
+    display: inline-block;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #0585ff;
+    color: #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    border: 1px solid #0585ff; /* Dodanie obramowania */
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1); /* Dodanie delikatnego cienia */
+}
+
+    .custom-button:hover4 {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2); /* Delikatne powiêkszenie cienia po najechaniu */
+    }

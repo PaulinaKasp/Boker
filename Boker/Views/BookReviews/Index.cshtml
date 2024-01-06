@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Boker.Models.BookReview>
+
+@{
+    ViewData["Title"] = "Recenzje";
+}
+
+<h1>Wszystkie recenzje</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tytuł
+            </th>
+            <th>
+                Użytkownik
+            </th>
+            <th>
+                Recenzja
+            </th>
+            <th>
+                Data i godzina
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewDate)
+            </td>
+            <td>
+                    <a class="custom-button3 pastel-pink" asp-action="Delete" asp-route-id="@item.Id">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

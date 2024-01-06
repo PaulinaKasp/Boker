@@ -1,0 +1,45 @@
+﻿@model Boker.Models.BookReview
+
+@{
+    ViewData["Title"] = "Recenzja";
+    var bookTitle = ViewData["BookTitle"];
+    var userId = User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+
+}
+
+<h1>Recenzja</h1>
+
+<h4>Tytuł: @bookTitle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <input type="hidden" asp-for="BookId" value="@Model.BookId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="UserId" value="@userId" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ReviewText" class="control-label">Recenzja</label>
+                <textarea asp-for="ReviewText" class="form-control" placeholder="Napisz recenzję"></textarea>
+                <span asp-validation-for="ReviewText" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" hidden>
+                <label asp-for="ReviewDate" class="control-label"></label>
+                <input asp-for="ReviewDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")" />
+                <span asp-validation-for="ReviewDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

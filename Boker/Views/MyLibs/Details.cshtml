@@ -1,0 +1,53 @@
+﻿@model Boker.Models.MyLib
+
+@{
+    ViewData["Title"] = "Szczegóły";
+}
+
+<h1>Szczegóły książki</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tytuł:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            Ulubione:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsFavorite)
+        </dd>
+        <dt class="col-sm-2">
+            Użytkownik:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.user.Email)
+        </dd>
+        <dt class="col-sm-2">
+            Początek czytania:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StartedReading)
+        </dd>
+        <dt class="col-sm-2">
+            Koniec czytania:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FinishedReading)
+        </dd>
+        <dt class="col-sm-2">
+            Notatki:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Edytuj</a>
+    <a class="btn btn-primary" asp-action="Index">Wróć</a>
+</div>
